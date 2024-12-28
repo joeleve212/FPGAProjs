@@ -45,3 +45,9 @@ ERROR: Module `main' not found!
 scons: *** [hardware.json] Error 1
 
 
+New approach- I went to achitry's site https://alchitry.com/boards/cu/#open-source-tools 
+and foudn that they officially recommend iceCube2 as the software: https://www.latticesemi.com/icecube2#_4351BE10BA504435B5226390CF5D7D4C
+This software installs nicely, but immediately yells at me that I don't have a license. I have to email them to get a free hobbyist license. 
+
+
+

@@ -1,0 +1,47 @@
+Starting to look at setup of project icestorm:
+
+Project Icestorm is the general name for everything put together, link has info/links at bottom for more stuff: 
+https://clifford.at/icestorm
+Includes Yosys, nextpnr, and IceStorm 
+
+Yosys:https://github.com/YosysHQ/yosys
+Nextpnr:
+https://github.com/YosysHQ/nextpnr
+Icestorm:
+Tutorials:https://learn.sparkfun.com/tutorials/tags/fpga
+Future boards to maybe get:https://www.sparkfun.com/qwiic
+
+
+Notes on how to use FPGA tools:
+
+
+Install directions used for apio:
+https://nandland.com/set-up-apio-fpga-build-and-program/
+
+Ice studio may be helpful in the future - has graphical stuff. Mentioned here:
+https://www.youtube.com/watch?v=gtkQ84Euyww&ab_channel=DigiKey
+
+
+Upload to board with apio:
+- use CMD as admin (maybe can do admin of git bash/cygwin?)
+- Upload to board command: apio  upload --board Alchitry-Cu -p folderContainingSourceFile
+
+
+There are executables in Documents/softwareInstalls/oss-cad-suite/bin - 
+I think I installed that stuff improperly though, I can only run gtkwave through command line call
+
+
+
+12/27 problem:
+$ apio  upload --board Alchitry-Cu -p .
+Info: No apio.ini file
+[Fri Dec 27 22:42:01 2024] Processing Alchitry-Cu
+-------------------------------------------------------------------------------------------------------------
+
+---> WARNING: no PCF file found (.pcf)
+
+yosys -p "synth_ice40 -top main -json hardware.json" -q boardVerify.v
+ERROR: Module `main' not found!
+scons: *** [hardware.json] Error 1
+
+

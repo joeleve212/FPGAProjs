@@ -6,5 +6,6 @@
     <component>reset_conditioner.luc</component>
     <src top="true">cu_top.v</src>
     <constraint lib="true">alchitry.acf</constraint>
+    <constraint>io.acf</constraint>
   </files>
 </project>

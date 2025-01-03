@@ -1,0 +1,13 @@
+ble_pack CONSTANT_ONE_LUT4_LC_32_3_0 { CONSTANT_ONE_LUT4 }
+clb_pack LT_32_3 { CONSTANT_ONE_LUT4_LC_32_3_0 }
+set_location LT_32_3 32 3
+set_io led[5] L14
+set_io led[1] K11
+set_io usb_rx P14
+set_io led[6] M12
+set_io led[4] L12
+set_io led[2] K12
+set_io led[0] J11
+set_io usb_tx M9
+set_io led[7] N14
+set_io led[3] K14

@@ -1,0 +1,10 @@
+OUTPUT led[5] 	 location (33, 3, 1) 	 L14 	 
+OUTPUT led[1] 	 location (33, 4, 1) 	 K11 	 
+INPUT  usb_rx 	 location (33, 1, 1) 	 P14 	 
+OUTPUT led[6] 	 location (33, 1, 0) 	 M12 	 
+OUTPUT led[4] 	 location (33, 2, 0) 	 L12 	 
+OUTPUT led[2] 	 location (33, 4, 0) 	 K12 	 
+OUTPUT led[0] 	 location (33, 6, 0) 	 J11 	 
+OUTPUT usb_tx 	 location (22, 0, 1) 	 M9 	 
+OUTPUT led[7] 	 location (33, 2, 1) 	 N14 	 
+OUTPUT led[3] 	 location (33, 5, 0) 	 K14 	 

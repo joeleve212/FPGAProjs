@@ -1,0 +1,18 @@
+#### START OF AREA REPORT #####[
+
+Part:			ICE40HX8KCB132 (Lattice)
+
+------------------------------------------------------------------------
+########   Utilization report for  Top level view:   cu_top_0   ########
+========================================================================
+
+IO PADS
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+PADS     10                 100 %                
+=================================================
+Total IO PADS in the block cu_top_0:	10 (83.33 % Utilization)
+
+
+##### END OF AREA REPORT #####]
+

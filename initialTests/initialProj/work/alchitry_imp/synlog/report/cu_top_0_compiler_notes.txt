@@ -1,0 +1,10 @@
+@N|Running in 64-bit mode
+@N|Running in 64-bit mode
+@N: CG364 :"C:\Users\joele\Documents\GHrepos\FPGAProjs\initialTests\initialProj\work\verilog\reset_conditioner_1.v":11:7:11:25|Synthesizing module reset_conditioner_1 in library work.
+@N: CG364 :"C:\Users\joele\Documents\GHrepos\FPGAProjs\initialTests\initialProj\work\verilog\cu_top_0.v":1:7:1:14|Synthesizing module cu_top_0 in library work.
+@N: CL159 :"C:\Users\joele\Documents\GHrepos\FPGAProjs\initialTests\initialProj\work\verilog\cu_top_0.v":2:10:2:12|Input clk is unused.
+@N: CL159 :"C:\Users\joele\Documents\GHrepos\FPGAProjs\initialTests\initialProj\work\verilog\cu_top_0.v":3:10:3:14|Input rst_n is unused.
+@N|Running in 64-bit mode
+@N: NF107 :"C:\Users\joele\Documents\GHrepos\FPGAProjs\initialTests\initialProj\work\verilog\cu_top_0.v":1:7:1:14|Selected library: work cell: cu_top_0 view verilog as top level
+@N: NF107 :"C:\Users\joele\Documents\GHrepos\FPGAProjs\initialTests\initialProj\work\verilog\cu_top_0.v":1:7:1:14|Selected library: work cell: cu_top_0 view verilog as top level
+

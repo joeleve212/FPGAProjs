@@ -50,4 +50,18 @@ and foudn that they officially recommend iceCube2 as the software: https://www.l
 This software installs nicely, but immediately yells at me that I don't have a license. I have to email them to get a free hobbyist license. 
 
 
+Waited to get the response, followed instructions and setup license without problem. I also found Alchitry Labs software that I should've found from the sparkfun page at the beginning. https://alchitry.com/alchitry-labs/
+Installed that, including the Java necessary and now I'm able to build and load code to the board!
+
+I noticed in Alchitry Labs, there was a contraints file that only provided the base board's LEDs and RST button, so I found the acf file for the IO board here: https://github.com/alchitry/Alchitry-Labs/blob/master/library/components/io.acf
+
+
+
+
+
+
+
+
+
+
 

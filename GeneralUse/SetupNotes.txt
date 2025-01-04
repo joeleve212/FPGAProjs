@@ -56,12 +56,22 @@ Installed that, including the Java necessary and now I'm able to build and load 
 I noticed in Alchitry Labs, there was a contraints file that only provided the base board's LEDs and RST button, so I found the acf file for the IO board here: https://github.com/alchitry/Alchitry-Labs/blob/master/library/components/io.acf
 
 
+Coming back to this a day later(computer in sleep mode, not shut down),
+I cannot build. 
+Fails with this error:
+Bin file (C:\Users\joele\Documents\GHrepos\FPGAProjs\initialTests\initialProj\work\alchitry_imp\sbt\outputs\bitmap\cu_top_0_bitmap.bin) could not be found! The build probably failed
 
+Searched online to find others have seen this problem for at least 2 years:
+https://github.com/alchitry/Alchitry-Labs/issues/31
 
+Ran this command in  /c/lscc/iCEcube2.2020.12  :
+find -type f -print0 | xargs -0 sed -i -e 's|^#!/bin/sh/|#!/bin/bash|g'
 
+took awhile, finally finished, and now I can't run iceCube2 at all. build fails with same issue as before as well as this:
+This version of C:\lscc\iCEcube2.2020.12\sbt_backend\bin\win32\opt\synpwrap\synpwrap.exe is not compatible with the version of Windows you're running. Check your computer's system information and then contact the software publisher.
 
+Trying to revert my change by running:
+find -type f -print0 | xargs -0 sed -i -e 's|^#!/bin/bash|#!/bin/sh/|g'
 
-
-
-
+did not work. RIP, will have to reinstall icecube and find different solution
 

@@ -4,8 +4,7 @@ module cu_top(
     output [7:0] led,       // 8 user controllable LEDs
     input usb_rx,           // USB->Serial input
     output usb_tx,           // USB->Serial output
-    input [4:0] io_button,
-    output [2:0] io_led
+    input [4:0] io_button
     );
     
     wire rst;
@@ -14,8 +13,9 @@ module cu_top(
     // clock. This ensures the entire FPGA comes out of reset at the same time.
     reset_conditioner reset_conditioner(.clk(clk), .in(!rst_n), .out(rst));
     
-    assign io_led[1] = 8'hff;      // turn LEDs on
-
+    assign led = io_button;
+//    assign led[1] = io_button[1];  
+    
     assign usb_tx = usb_rx;  // echo the serial data
     
 endmodule

@@ -75,3 +75,13 @@ find -type f -print0 | xargs -0 sed -i -e 's|^#!/bin/bash|#!/bin/sh/|g'
 
 did not work. RIP, will have to reinstall icecube and find different solution
 
+========
+After reinstalling icecube to get toolchain back to where it was, still didn't work.
+
+After fiddling around for a while, found that Alchitry Labs is the problem. 
+It seems to not want to build if the software is left open for a long time? Could be different trigger
+Once a project "can't find cu_top_0_bitmap.bin", it's never going to work. 
+A new project can build fine, so that's the work around for now - copy/paste work into new project when ready to build.
+
+
+

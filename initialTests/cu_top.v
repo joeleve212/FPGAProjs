@@ -25,7 +25,7 @@ module cu_top(
 
     //MY DESIGN::
     reg [3:0] binaryVal;
-    bcd_oneChar(io_dip0[3:0], io_seg[3:0]);
+    bcd_oneChar bcd_oneChar(io_dip0[3:0], io_seg[3:0]);
 
     
 endmodule

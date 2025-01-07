@@ -8,15 +8,18 @@ module bcd_oneChar(
   //binDig[0] is D
   
   //seg a
-  assign segOut[0] = ~(binDig[0] ^ binDig[2]) | binDig[3] | binDig[1];
+  wire a = ~(binDig[0] ^ binDig[2]) | binDig[3] | binDig[1];
+  assign segOut[0] = ~a; //Inversion due to 7segs being common anode
   //seg b
-  assign segOut[1] = ~(binDig[2]) | ~(binDig[1] ^ binDig[0]);
+  wire b = ~(binDig[2]) | ~(binDig[1] ^ binDig[0]);
+  assign segOut[1] = ~b;
   //seg c
-  assign segOut[2] = ~(binDig[1]) | binDig[0] | binDig[2];
+  wire c = ~(binDig[1]) | binDig[0] | binDig[2];
+  assign segOut[2] = ~c;
   //seg d
-  assign segOut[3] = (~binDig[2] & ~binDig[0]) | (binDig[1] & ~binDig[0]) | 
+  wire d = (~binDig[2] & ~binDig[0]) | (binDig[1] & ~binDig[0]) | 
               (binDig[1] & ~binDig[2]) | (binDig[2] & ~binDig[1] & binDig[0]) | binDig[3];
+  assign segOut[3] = ~d;
 
-  
   
 endmodule

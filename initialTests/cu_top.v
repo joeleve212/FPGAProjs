@@ -19,8 +19,8 @@ module cu_top(
     assign usb_tx = usb_rx;  // echo the serial data
 
     //MY DESIGN::
-    reg [3:0] binaryVal;
-    bcd_oneChar bcd_oneChar(io_dip0[3:0], io_seg[6:0]);
+    reg [3:0] binaryVal = 4'h0;
+    bcd_oneChar firstChar(binaryVal, io_seg[6:0]);
 
     
 endmodule

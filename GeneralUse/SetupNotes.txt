@@ -88,5 +88,12 @@ Alchitry Labs is having even further trouble now, and the workaround isn't worki
 I can build using icecube2 directly, then load using alchitry loader, but I don't know how to transfer constraints over, 
 iceCube2 does not like the .acf format.
 
+Nevermind - alchitry labs doesn't like it if multiple modules are defined in one .v file. 
+So make sure to define new modules in separate files. 
+Looking at my test of a-d segments:
+- all 4 7seg displays by default get the same values (use select lines to figure out how to select them)
+- io dip0 is on the right side, with 0-3 on the right side
+- the segments are reverse of how they are driven - so common anode? double check my terminology
+
 
 

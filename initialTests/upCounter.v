@@ -1,11 +1,10 @@
 module countUp(
     input trigger,
-    output [3:0] regVal
+    output reg [3:0] regVal
     );
-    reg[7:0] numCycs = 8'h00;
-    reg[3:0] base = 4'd10;
+    parameter integer highestVal = 9;
     always @ (posedge trigger) begin
-        if (regVal == (base - 1)) begin
+        if (regVal == highestVal) begin
             regVal = 4'h0;
         end else begin
             regVal = regVal + 1;

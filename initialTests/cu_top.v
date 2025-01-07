@@ -19,10 +19,10 @@ module cu_top(
     assign usb_tx = usb_rx;  // echo the serial data
 
     //MY DESIGN::
-    reg [3:0] binaryVal = 4'h0;
+    wire [3:0] binaryVal;
     bcd_oneChar firstChar(binaryVal, io_seg[6:0]);
 
     countUp myCounter(io_button[0], binaryVal);
-    
+
 endmodule
 

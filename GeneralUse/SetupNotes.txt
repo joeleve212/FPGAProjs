@@ -96,4 +96,8 @@ Looking at my test of a-d segments:
 - the segments are reverse of how they are driven - so common anode? double check my terminology
 
 
+my protip for future: Alchitry Labs doesn't give any info about failed synthesis, but icecube does. 
+
+
+
 

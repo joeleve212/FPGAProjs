@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project name="starter" board="Alchitry Cu" language="Verilog" version="3">
-  <files>
-    <src top="true">cu_top.v</src>
-    <component>reset_conditioner.luc</component>
-    <constraint>alchitry.acf</constraint>
-  </files>
-</project>

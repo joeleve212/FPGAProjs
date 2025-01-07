@@ -15,11 +15,6 @@ module cu_top(
     output [7:0] io_seg
     );
     
-    //DEFAULT ITEMS::
-    wire rst;
-    // The reset conditioner is used to synchronize the reset signal to the FPGA
-    // clock. This ensures the entire FPGA comes out of reset at the same time.
-    reset_conditioner reset_conditioner(.clk(clk), .in(!rst_n), .out(rst));
 
     assign usb_tx = usb_rx;  // echo the serial data
 

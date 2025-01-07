@@ -84,4 +84,9 @@ Once a project "can't find cu_top_0_bitmap.bin", it's never going to work.
 A new project can build fine, so that's the work around for now - copy/paste work into new project when ready to build.
 
 
+Alchitry Labs is having even further trouble now, and the workaround isn't working anymore. 
+I can build using icecube2 directly, then load using alchitry loader, but I don't know how to transfer constraints over, 
+iceCube2 does not like the .acf format.
+
+
 

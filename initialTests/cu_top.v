@@ -22,6 +22,7 @@ module cu_top(
     reg [3:0] binaryVal = 4'h0;
     bcd_oneChar firstChar(binaryVal, io_seg[6:0]);
 
+    countUp myCounter(io_button[0], binaryVal);
     
 endmodule
 

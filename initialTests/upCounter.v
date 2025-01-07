@@ -1,15 +1,14 @@
 module countUp(
-    input clk,
+    input trigger,
     output [3:0] regVal
     );
     reg[7:0] numCycs = 8'h00;
-    always @ (posedge clk) begin
-        numCycs = numCycs + 1;
-        if (numCycs = 8'd100) begin
+    reg[3:0] base = 4'd10;
+    always @ (posedge trigger) begin
+        if (regVal == (base - 1)) begin
+            regVal = 4'h0;
+        end else begin
             regVal = regVal + 1;
-            if (regVal = 4'd10) begin
-                regVal = 4'h0;
-            end
         end
     end
 

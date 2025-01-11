@@ -20,11 +20,23 @@ module cu_top(
 
     //MY DESIGN::
     wire [3:0] binaryVal;
+    reg [3:0] selDisp = 4'h1;
     bcd_oneChar firstChar(binaryVal, io_seg[6:0]);
-
+    //TODO: need a debounce for each button
+    //TODO: add button to shift num left/right
     countUp myCounter(io_button[0], binaryVal);
 
-    assign io_sel = io_dip1[3:0];
+    wire shiftButtons = io_button[2] | io_button[4];
+    always @ (posedge shiftButtons) begin
+      if(io_button[2]) begin
+         selDisp <= selDisp << 1;
+      end
+      if(io_button[4]) begin
+          selDisp <= selDisp >> 1;
+      end
+    end
+
+    assign io_sel = selDisp;
 
 endmodule
 

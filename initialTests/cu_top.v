@@ -24,5 +24,7 @@ module cu_top(
 
     countUp myCounter(io_button[0], binaryVal);
 
+    assign io_sel = io_dip1[3:0];
+
 endmodule
 

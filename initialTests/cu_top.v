@@ -20,31 +20,37 @@ module cu_top(
 
     //MY DESIGN::
     wire [3:0] binaryVal;
-    wire [3:0] smoothButton;
-    debouncer debounce0(clk, io_button[0], smoothButton[0]);
+    wire [4:0] smoothButton;
+    debouncer debounce[4:0] (clk, io_button, smoothButton);
     
     bcd_oneChar firstChar(binaryVal, io_seg[6:0]);
 
     countUp myCounter(smoothButton[0], binaryVal);
     
     
-    reg [3:0] selDisp = 4'hE;
-    wire shiftButtons = smoothButton[2] | smoothButton[4];
+    reg [3:0] selDisp = 4'hE;  //which disp is this? far right?
+//    wire shiftButtons = smoothButton[2] | smoothButton[4];
     
     assign io_sel = selDisp;
     reg [1:0] LEDvals = 2'b00;
     assign io_led1[0] = LEDvals[0];
     assign io_led1[1] = LEDvals[1];
+    assign io_led2[0] = smoothButton[3];
+    assign io_led2[7] = smoothButton[4];
     
-    always @ (posedge smoothButton[2]) begin
+    always @ (posedge smoothButton[3]) begin
       
-      if(smoothButton[2]) begin
+      if(smoothButton[3]) begin
          selDisp = selDisp << 1;
          LEDvals[0] = 1'b1;
+      end else begin
+         LEDvals[0] = 1'b0;
       end
       if(smoothButton[4]) begin
-          selDisp = selDisp >> 1;
-          LEDvals[1] = 1'b1;
+        selDisp = selDisp >> 1;
+        LEDvals[1] = 1'b1;
+      end else begin
+        LEDvals[1] = 1'b0;
       end
     end
     

@@ -29,30 +29,29 @@ module cu_top(
     
     
     reg [3:0] selDisp = 4'hE;  //which disp is this? far right?
-//    wire shiftButtons = smoothButton[2] | smoothButton[4];
     
-    assign io_sel = selDisp;
+    assign io_sel = io_dip1;
     reg [1:0] LEDvals = 2'b00;
     assign io_led1[0] = LEDvals[0];
     assign io_led1[1] = LEDvals[1];
-    assign io_led2[0] = smoothButton[3];
-    assign io_led2[7] = smoothButton[4];
+    assign io_led2[0] = smoothButton[4];
+    assign io_led2[7] = smoothButton[3];
     
-    always @ (posedge smoothButton[3]) begin
-      
-      if(smoothButton[3]) begin
+    always @ (smoothButton[3] or smoothButton[4]) begin
+      if(smoothButton[4]) begin
          selDisp = selDisp << 1;
          LEDvals[0] = 1'b1;
       end else begin
          LEDvals[0] = 1'b0;
       end
-      if(smoothButton[4]) begin
+      if(smoothButton[3]) begin
         selDisp = selDisp >> 1;
         LEDvals[1] = 1'b1;
       end else begin
         LEDvals[1] = 1'b0;
       end
     end
+    
     
     
 

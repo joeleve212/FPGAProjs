@@ -5,21 +5,22 @@ module debouncer (
   );
   reg [7:0] pressCount = 8'h00;
   parameter integer minCount = 10; //Minimum pressCount needed to make output high
-  /* Combinational Logic */    //prob not needed, leaving as example
- // always @* begin
- //   if (pressCount>50) begin
- //     out = 1'h1;
- //   end
- // end
+  reg outVal = 1'b0;
+
   
-  assign out = pressCount[5]; //Essentially if presscount >= 32, out is high
+  assign out = outVal;
   
   /* Sequential Logic */
-  always @(posedge clk) begin        /////TODO: fix this debouncing. Currently it breaks using the button
-    if (in) begin
+  always @(posedge clk) begin
+    if (in && (pressCount < 255)) begin
       pressCount = pressCount + 1;
-    end else begin
+    end else if (pressCount > 0) begin
       pressCount = pressCount - 1;
+    end
+    if (pressCount > 50) begin
+      outVal = 1'b1;
+    end else if (pressCount == 0) begin
+      outVal = 1'b0;
     end
     
   end

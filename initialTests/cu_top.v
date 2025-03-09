@@ -41,11 +41,19 @@ module cu_top(
     always @ (posedge clk) begin
       if(smoothButton[4]) begin
         if(!lastVals[4]) begin
-          selDisp <= selDisp >> 1;
+          if( (selDisp >> 1) == 0 ) begin
+            selDisp <= 4'h8;
+          end else begin
+            selDisp <= selDisp >> 1;
+          end
         end
       end else if(smoothButton[3]) begin
         if(!lastVals[3]) begin
-          selDisp <= selDisp << 1;
+          if( (selDisp << 1) == 0 ) begin
+            selDisp <= 4'h1;
+          end else begin
+            selDisp <= selDisp << 1;
+          end
         end
       end else if(smoothButton[2]) begin
         if(!lastVals[2]) begin

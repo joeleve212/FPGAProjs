@@ -1,7 +1,8 @@
 Feature Ideas:
 - clock divider
-- multi-digit display values
+- multi-digit display values - is this possible?
 - count down
+- fix wrap around left weirdness
 
 
 Project Ideas:

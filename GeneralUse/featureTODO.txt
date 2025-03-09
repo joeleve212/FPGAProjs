@@ -2,7 +2,6 @@ Feature Ideas:
 - clock divider
 - multi-digit display values
 - count down
-- fix shifting
 
 
 Project Ideas:

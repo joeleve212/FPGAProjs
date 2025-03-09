@@ -27,11 +27,13 @@ module cu_top(
 
     countUp myCounter(smoothButton[0], binaryVal);
     
-    reg [3:0] selDisp;  //which disp is this? far right?
+    reg [3:0] selDisp;
+    wire [3:0] select_inv;
     reg [5:0] lastVals = 6'h00;
     
-    assign io_sel[3:0] = selDisp[3:0];
-    assign io_led0[3:0] = selDisp[3:0];
+    assign select_inv = ~selDisp;   //Select_inv is needed to allow selDisp shifts to pad with zero, then invert signals for proper display
+    assign io_sel[3:0] = select_inv;
+    assign io_led0[3:0] = select_inv;
     
     assign io_led2[0] = smoothButton[4];
     assign io_led2[7] = smoothButton[3];
@@ -41,25 +43,21 @@ module cu_top(
         if(!lastVals[4]) begin
           selDisp <= selDisp >> 1;
         end
-        
       end else if(smoothButton[3]) begin
         if(!lastVals[3]) begin
           selDisp <= selDisp << 1;
         end
-       
       end else if(smoothButton[2]) begin
         if(!lastVals[2]) begin
           selDisp <= 2;
         end
-        
       end else if(smoothButton[1]) begin
         if(!lastVals[1]) begin
           selDisp <= 1;
         end
-        
       end else if(!rst_n) begin
         if(!lastVals[5]) begin
-          selDisp <= 4'hE;
+          selDisp <= 4'h1;
         end
       end
       lastVals[4] <= smoothButton[4]; //This can probably be done in a nice way all at once

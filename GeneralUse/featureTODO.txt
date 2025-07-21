@@ -2,7 +2,6 @@ Feature Ideas:
 - clock divider
 - multi-digit display values - is this possible?
 - count down
-- fix wrap around left weirdness where number sometimes disappears
 
 
 Project Ideas:

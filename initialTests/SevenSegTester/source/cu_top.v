@@ -49,7 +49,7 @@ module cu_top(
         end
       end else if(smoothButton[3]) begin //move to the left
         if(!lastVals[3]) begin  
-          if( (selDisp << 1) == 0 ) begin
+          if( (selDisp << 1) == 16 ) begin
             selDisp <= 4'h1;
           end else begin
             selDisp <= selDisp << 1;

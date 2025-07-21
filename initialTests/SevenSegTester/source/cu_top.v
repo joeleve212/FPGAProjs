@@ -20,8 +20,10 @@ module cu_top(
 
     //MY DESIGN::
     wire [3:0] binaryVal;
+    wire [4:0] firstPassButton;
     wire [4:0] smoothButton;
-    debouncer debounce[4:0] (clk, io_button, smoothButton);
+    debouncer debounce[4:0] (clk, io_button, firstPassButton);
+    debouncer debounceStep2[4:0] (clk, firstPassButton, smoothButton);
     
     bcd_oneChar firstChar(binaryVal, io_seg[6:0]);
 
@@ -35,8 +37,7 @@ module cu_top(
     assign io_sel[3:0] = select_inv;
     assign io_led0[3:0] = select_inv;
     
-    assign io_led2[0] = smoothButton[4];
-    assign io_led2[7] = smoothButton[3];
+    assign io_led2[3:0] = binaryVal[3:0];
     
     always @ (posedge clk) begin
       if(smoothButton[4]) begin //move to the right

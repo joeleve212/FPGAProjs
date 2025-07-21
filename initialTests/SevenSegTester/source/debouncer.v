@@ -17,7 +17,7 @@ module debouncer (
     end else if (pressCount > 0) begin
       pressCount = pressCount - 1;
     end
-    if (pressCount > 50) begin
+    if (pressCount > 200) begin
       outVal = 1'b1;
     end else if (pressCount == 0) begin
       outVal = 1'b0;

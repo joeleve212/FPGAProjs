@@ -1,7 +1,8 @@
 Feature Ideas:
 - clock divider
 - multi-digit display values - is this possible?
-- count down
+- investigate having 7seg show different vals on separate digits
+- allow count up and count down to work together
 
 
 Project Ideas:

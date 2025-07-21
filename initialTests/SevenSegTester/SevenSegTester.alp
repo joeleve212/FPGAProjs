@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="SevenSegTester" board="Alchitry Cu" language="Verilog" version="3">
+  <files>
+    <src>bcd.v</src>
+    <src>debouncer.v</src>
+    <src top="true">cu_top.v</src>
+    <src>counter.v</src>
+    <component>reset_conditioner.luc</component>
+    <constraint>alchitry.acf</constraint>
+  </files>
+</project>

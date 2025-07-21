@@ -7,7 +7,7 @@ Feature Ideas:
 
 Project Ideas:
 - ALU?
-- 
+- Use "Add Component" items - like UART or I2C
 - 
 
 
